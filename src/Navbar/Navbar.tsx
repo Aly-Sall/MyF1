@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../logo.jpg";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +15,13 @@ function Navbar() {
           <div className="flex items-center justify-between h-14">
             <div className="flex-shrink-0">
               <NavLink to="/">
-                <img className="h-8 w-8 cursor-pointer" src={logo} alt="Logo" />
+                <img
+                  className="h-8 w-8 cursor-pointer"
+                  src="https://png.pngtree.com/png-clipart/20230917/original/pngtree-linear-f1-racing-car-illustration-vector-png-image_12283551.png"
+                  alt="Logo"
+                  width={480}
+                  height={150}
+                />
               </NavLink>
             </div>
             <div className="hidden md:block">
