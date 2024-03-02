@@ -57,7 +57,6 @@ const Drivers = () => {
                       height={50}
                       width={50}
                       className="mr-3"
-                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -68,13 +67,11 @@ const Drivers = () => {
                     alt=""
                     height={85}
                     width={85}
-                    loading="lazy"
                   />
                   <img
                     className="object-contain h-48 w-96"
                     src={driver.img}
                     alt=""
-                    loading="lazy"
                   />
                 </div>
               </Link>

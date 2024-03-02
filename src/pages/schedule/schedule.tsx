@@ -51,7 +51,6 @@ const Schedule = () => {
                   src={scheduleItem.pic}
                   alt=""
                   className="rounded-md rounded-b-none w-full h-full object-cover"
-                  loading="lazy"
                 />
               </div>
 

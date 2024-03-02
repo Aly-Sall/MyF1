@@ -19,7 +19,6 @@ const Header: React.FC = () => {
           src={hero}
           className="absolute top-0 left-0 w-full h-full object-cover"
           alt=""
-          loading="lazy"
         ></img>
         <div className="absolute inset-0 flex items-center justify-center bg-opacity-50 bg-black font-bold">
           <motion.h1
