@@ -7,10 +7,8 @@ const Footer = () => {
         {/* Content here */}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center pt-2 text-gray-400 text-sm pb-8">
-        <span className="col-span-3 sm:col-auto">
-          © 2024 F1. All rights reserved.
-        </span>
-        <span className="col-span-3 sm:col-auto">Privacy Policy</span>
+        <span className="col-span-3 sm:col-auto">© 2024 myF1.</span>
+        <span className="col-span-3 sm:col-auto">Built by Sall Aly.</span>
         <div className="col-span-3 sm:col-auto">
           <span className="p-2 cursor-pointer inline-flex items-center rounded-full bg-gray-700 mx-1.5 text-xl hover:text-gray-50 hover:bg-teal-500 duration-300">
             <SocialIcon
