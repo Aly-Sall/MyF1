@@ -99,23 +99,12 @@ function Navbar() {
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <NavLink
-              to="/f1"
-              className="text-white hover:bg-red-700 block px-3 py-2 rounded-md text-base font-medium"
-            >
-              F1
-            </NavLink>
-            <NavLink
               to="/drivers"
               className="text-white hover:bg-red-700 block px-3 py-2 rounded-md text-base font-medium"
             >
               Drivers
             </NavLink>
-            <NavLink
-              to="/results"
-              className="text-white hover:bg-red-700 block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Results
-            </NavLink>
+
             <NavLink
               to="/schedule"
               className="text-white hover:bg-red-700 block px-3 py-2 rounded-md text-base font-medium"
