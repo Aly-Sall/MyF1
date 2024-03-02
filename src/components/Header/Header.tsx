@@ -27,7 +27,7 @@ const Header: React.FC = () => {
             transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
             className="text-2xl sm:text-xs md:text-xl lg:text-6xl xl:text-6xl font-bold text-white"
           >
-            Explorez la vitesse de la F1 !
+            Explore the speed of F1!
           </motion.h1>
         </div>
       </div>
@@ -58,7 +58,7 @@ const Header: React.FC = () => {
         />
         <Link to="/Liveries">
           <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex flex-col justify-center p-8 md:p-4 lg:p-8 md:text-xs">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif mb-2 first-letter:text-5xl">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl mb-2 first-letter:text-5xl">
               Liveries 2024
             </h1>
           </div>
