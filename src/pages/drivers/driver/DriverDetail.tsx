@@ -1,7 +1,5 @@
-// DriverDetail.tsx
-
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import driversData from "../../../data/drivers.json";
 
 interface Driver {
@@ -31,67 +29,72 @@ const DriverDetail: React.FC = () => {
   );
 
   if (!driver) {
-    return <div>Pilote non trouvé</div>;
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen text-center">
+        <h2 className="text-2xl font-bold text-red-600">Pilote non trouvé</h2>
+        <Link to="/drivers" className="text-blue-500 hover:underline mt-4">
+          Retour à la liste des pilotes
+        </Link>
+      </div>
+    );
   }
 
   return (
-    <div className=" lg:flex p-8 ">
+    <div className="lg:flex p-8">
       <div className="lg:w-1/2">
         <img
-          src={driver.img2 || "/placeholder-image.jpg"}
-          alt="Driver Image"
-          className="w-719 h-720 mb-9"
+          src={driver.img2 || "/placeholder-driver.jpg"}
+          alt={`${driver.givenName} ${driver.familyName}`}
+          className="w-full h-auto mb-9"
         />
-
-        <div className="flex ml-4">
-          <img src={driver.permanentNumber} alt="" height={60} width={60} />
-          <img src={driver.flag} alt="" height={60} width={60} />
+        <div className="flex items-center ml-4 space-x-4">
+          <img
+            src={driver.permanentNumber || "/placeholder-number.png"}
+            alt="Permanent Number"
+            height={60}
+            width={60}
+          />
+          <img
+            src={driver.flag || "/placeholder-flag.png"}
+            alt={`${driver.nationality} Flag`}
+            height={60}
+            width={60}
+          />
         </div>
       </div>
 
       <div className="lg:w-1/2 lg:ml-8">
-        <h2 className="text-3xl font-bold mb-4">
-          <img src={driver.helmet} alt="" height={200} width={200} />
-        </h2>
+        <h2 className="text-3xl font-bold mb-4">{`${driver.givenName} ${driver.familyName}`}</h2>
+        {driver.helmet && (
+          <img
+            src={driver.helmet}
+            alt={`${driver.givenName}'s Helmet`}
+            className="w-40 h-40 mb-4"
+          />
+        )}
         <div className="overflow-x-auto">
-          <table className="min-w-full ">
+          <table className="min-w-full border-collapse border border-gray-300">
             <tbody>
-              <tr>
-                <td className="text-xl font-bold text-center align-middle ">
-                  Team
-                </td>
-                <td className="align-middle">{driver.team}</td>
-              </tr>
-              <tr>
-                <th className="text-xl font-bold text-center align-middle">
-                  Country
-                </th>
-                <td className="align-middle">{driver.nationality}</td>
-              </tr>
-              <tr>
-                <th className="text-xl font-bold">Grands Prix entered</th>
-                <td>{driver.grandsPrixEntered}</td>
-              </tr>
-              <tr>
-                <th className="text-xl font-bold">World Championships</th>
-                <td>{driver.worldChampionships}</td>
-              </tr>
-              <tr>
-                <th className="text-xl font-bold">Highest race finish</th>
-                <td>{driver.highestRaceFinish}</td>
-              </tr>
-              <tr>
-                <th className="text-xl font-bold">Highest grid position</th>
-                <td>{driver.highestGridPosition}</td>
-              </tr>
-              <tr>
-                <th className="text-xl font-bold">Date of birth</th>
-                <td>{driver.dateOfBirth}</td>
-              </tr>
-              <tr>
-                <th className="text-xl font-bold">Place of birth</th>
-                <td>{driver.placeOfBirth}</td>
-              </tr>
+              {[
+                ["Team", driver.team],
+                ["Country", driver.nationality],
+                ["Grands Prix entered", driver.grandsPrixEntered],
+                ["World Championships", driver.worldChampionships],
+                ["Highest race finish", driver.highestRaceFinish],
+                ["Highest grid position", driver.highestGridPosition],
+                ["Date of birth", driver.dateOfBirth],
+                ["Place of birth", driver.placeOfBirth],
+              ].map(
+                ([label, value]) =>
+                  value && (
+                    <tr key={label}>
+                      <th className="text-left p-2 font-semibold border border-gray-300">
+                        {label}
+                      </th>
+                      <td className="p-2 border border-gray-300">{value}</td>
+                    </tr>
+                  )
+              )}
             </tbody>
           </table>
         </div>
