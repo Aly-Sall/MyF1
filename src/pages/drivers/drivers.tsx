@@ -36,7 +36,7 @@ const Drivers = () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         <AnimatePresence>
-          {driversData.map((driver) => (
+          {driversData.map((driver, index) => (
             <motion.div
               key={driver.familyName}
               className="m-5 border-t-4 border-r-4 border-x-slate-950 border-y-slate-950"
@@ -47,8 +47,9 @@ const Drivers = () => {
             >
               <Link to={`/driver/${driver.familyName}`}>
                 <div className="flex flex-col items-center justify-between py-3 border-t-2 border-b-2 my-2 mx-2">
-                  <h3>
-                    {driver.givenName} {driver.familyName}
+                  {/* Affichage du numéro incrémenté */}
+                  <h3 className="text-3xl font-bold text-black">
+                    {index + 1}. {driver.givenName} {driver.familyName}
                   </h3>
                   <div>
                     <img
