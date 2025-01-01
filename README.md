@@ -3,14 +3,15 @@ Formula 1 Website
 Description
 
 This is a Formula 1 website built using React, TypeScript, Tailwind CSS, and Framer Motion. The website displays information about drivers, cars, and the 2024 calendar for Formula 1 races.
-Features
+
+Features :
 
     Display information about Formula 1 drivers.
     Showcase details of Formula 1 cars (monoplaces).
     Provide the Formula 1 race calendar for the year 2024.
     Responsive design for various screen sizes.
 
-Technologies Used
+Technologies Used :
 
     React
     TypeScript
